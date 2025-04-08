@@ -21,7 +21,7 @@ Step 2: Download the TrashCan script
 Make sure you have the 'trashcan.py' file in your working directory.
 
 (Optional) Make it executable:
-chmod +x trashcan.py
+chmod +x trashcan
 
 ---
 
