@@ -1,86 +1,83 @@
-TrashCan - Step-by-Step Guide 🗑️
+# 🗑️ TrashCan - Step-by-Step Guide
 
-TrashCan is a safer way to delete files on Linux.
+TrashCan is a safer way to delete files on Linux.  
 Instead of permanently deleting your files, TrashCan moves them to a safe folder where you can restore or permanently purge them later.
 
 Follow these simple steps to use TrashCan:
 
----
-
-Step 1: Make sure you have Python 3
-
-Open your terminal and check Python version:
+## ✅ Step 1: Make sure you have Python 3
+Open your terminal and check the Python version:
+```bash
 python3 --version
+```
+If you see `Python 3.x.x`, you're ready!
 
-If you see Python 3.x.x, you're ready!
-
----
-
-Step 2: Download the TrashCan script
-
-Make sure you have the 'trashcan.py' file in your working directory.
+## 📥 Step 2: Download the TrashCan script
+Make sure you have the `trashcan.py` file in your working directory.
 
 (Optional) Make it executable:
-chmod +x trashcan
+```bash
+chmod +x trashcan.py
+```
 
----
-
-Step 3: Create a test file
-
-Let's create a file to test TrashCan:
+## 📄 Step 3: Create a test file
+Let’s create a file to test TrashCan:
+```bash
 echo "Hello TrashCan!" > testfile.txt
+```
 
----
-
-Step 4: Move a file to TrashCan (safe delete)
-
+## 🗑️ Step 4: Move a file to TrashCan (safe delete)
 Run this command to move the file to TrashCan:
+```bash
 python3 trashcan.py delete testfile.txt
+```
+You should see something like:
+```
+Moved 'testfile.txt' to trash as 'testfile.txt_1744145534'.
+```
 
-You should see:
-Moved 'testfile.txt' to trash.
-
----
-
-Step 5: List trashed files
-
+## 📋 Step 5: List trashed files
 See what’s inside your TrashCan:
+```bash
 python3 trashcan.py list
-
+```
 You'll see something like:
-testfile.txt.1712589200 -> /home/user/testfile.txt (deleted 2025-04-08T10:45:21)
+```
+testfile.txt_1744145534 -> /home/user/testfile.txt (deleted 2025-04-08T10:45:21)
+```
+🔑 **Note:** Copy the full filename with the underscore and timestamp — you’ll need this for the restore step.
 
-Note: Remember the full filename with the timestamp — you'll need this to restore the file!
-
----
-
-Step 6: Restore your file
-
+## ♻️ Step 6: Restore your file
 To bring the file back from TrashCan, run:
-python3 trashcan.py restore testfile.txt.1712589200
-
+```bash
+python3 trashcan.py restore 1
+```
 You should see:
+```
 Restored '/home/user/testfile.txt'
-
-Check your file is back:
+```
+Check the file is back:
+```bash
 cat testfile.txt
+```
 
----
-
-You’re done! ✅
-
+## ✅ You’re done!
 TrashCan is now working and keeping your files safe from accidental deletion.
 
-Optional next steps:
-- Use 'python3 trashcan.py purge 0' to permanently delete old files.
-- Use 'python3 trashcan.py help' to see all commands.
+## 🧹 Optional next steps
+- Use `python3 trashcan.py purge 0` to permanently delete all files in the trash.
+- Use `python3 trashcan.py help` to see all available commands.
 
-Enjoy safer deleting with TrashCan! 🗑️
+## 🧩 Summary of Commands
 
-🧩 Summary of Commands
-Command	Description
-delete <file>	Move a file to trash
-list	List all trashed files
-restore <filename>	Restore a file from trash (use filename from list)
-purge [days]	Permanently delete files older than days (default: 7)
-help	Show help message
+| Command                          | Description                                         |
+|----------------------------------|-----------------------------------------------------|
+| `delete <file>`                 | Move a file to trash                               |
+| `list`                          | List all trashed files                             |
+| `restore <filename>`           | Restore a file from trash (use filename from list) |
+| `purge [days]`                 | Permanently delete files older than days (default: 7) |
+| `help`                          | Show help message                                  |
+
+---
+
+Enjoy safer deleting with **TrashCan**! 🗑️
