@@ -1,0 +1,24 @@
+TrashCan - Enhanced Recycle Bin for Linux
+
+Description:
+TrashCan safely deletes your files by moving them to a custom trash folder (~/.trashcan). Files can be restored by ID or permanently purged.
+
+Usage:
+  python3 trashcan.py delete <file>     # Move a file to trash
+  python3 trashcan.py list              # List all trashed files
+  python3 trashcan.py restore <id>      # Restore a file by ID
+  python3 trashcan.py purge             # Empty the trash
+  python3 trashcan.py help              # Show help
+
+Examples:
+  python3 trashcan.py delete notes.txt
+  python3 trashcan.py list
+  python3 trashcan.py restore 1
+  python3 trashcan.py purge
+
+Quick Tip:
+Files older than 7 days are automatically purged. Check 'list' often!
+
+Troubleshooting:
+- Make sure file paths are correct.
+- TrashCan auto-creates a database and folder in your home directory.
