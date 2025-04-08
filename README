@@ -1,1 +1,25 @@
-This doesnt matter
+# 🗑️ TrashCan - Safer Deletes for Linux
+
+**TrashCan** is a simple, lightweight command-line utility that protects you from accidental file deletions by moving files to a custom trash folder (`~/.trashcan`) instead of permanently deleting them.
+
+Easily move files to trash, list deleted files, restore them, or permanently purge old trash.
+
+---
+
+## Features
+
+- ✅ Move files to a hidden trash folder instead of deleting
+- ✅ List trashed files with original location and deletion time
+- ✅ Restore files back to their original location
+- ✅ Purge files older than a set number of days (default: 7)
+- ✅ Auto-create trash folder and metadata file
+- ✅ Clean and fast command-line interface
+
+---
+
+## Installation
+
+1. Clone the repository or copy the script to your local machine.
+2. Make sure you have Python 3 installed:
+   ```bash
+   python3 --version
